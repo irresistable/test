@@ -10,19 +10,19 @@ namespace test_val_ref_static
         {
             Base test = new Base();
             test.First();
-            test.Second();
             Console.WriteLine("-=-=-");
 
             Derived test2 = new Derived();
             test2.First();
-            test2.Second();
             Console.WriteLine("-=-=-");
 
             Base derivedAsBase = new Derived();
             derivedAsBase.BBB();
-
-            derivedAsBase.First();  // Derived.First(), выведет "First from Derived"           	 
-            derivedAsBase.Second(); // Base.Second(), выведет "Second from Base"
+            
+            derivedAsBase.First();  // Derived.First(), выведет "First from Derived"    
+            //override - тут переопределили метод базового класса      	 
+            derivedAsBase.Second(); // Base.Second(), выведет "Second from Base"   
+            //new - тут создали новый экземпляр базового класса?
             Console.ReadLine();
         }
 
